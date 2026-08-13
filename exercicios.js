@@ -34,8 +34,9 @@ console.log(numero1 * numero2)
 // Converta para Fahrenheit e mostre no console.
 // Fórmula: F = C * 9/5 + 32
 // ------------------------------------------------------------
-
-
+let Celsius = 43
+let Fahrenheit = Celsius * 9/5 + 32
+console.log (Fahrenheit)
 
 
 // EXERCÍCIO 3 - Par ou ímpar
