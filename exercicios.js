@@ -36,7 +36,7 @@ console.log(numero1 * numero2)
 // ------------------------------------------------------------
 let Celsius = 43
 let Fahrenheit = Celsius * 9/5 + 32
-console.log (Fahrenheit)
+console.log(Fahrenheit)
 
 
 // EXERCÍCIO 3 - Par ou ímpar
@@ -45,7 +45,7 @@ console.log (Fahrenheit)
 // Dica: use o operador % (resto da divisão)
 // Se numero % 2 === 0, é par.
 // ------------------------------------------------------------
-let numero = 4
+let numero67 = 4
 if(numero % 2 === 0){
 console.log("par")  
 }else{
@@ -190,7 +190,11 @@ if (nota >= 9 && nota <= 10) {
 //   ... até "5 x 10 = 50"
 // ------------------------------------------------------------
 
+let numero = 5;
 
+for (let i = 1; i <= 10; i++) {
+    console.log(numero + " x " + i + " = " + (numero * i));
+}
 
 
 // EXERCÍCIO 10 - Contagem regressiva
