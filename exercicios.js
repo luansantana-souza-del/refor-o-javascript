@@ -235,7 +235,20 @@ console.log(soma);
 // Dica: use prompt() para pedir o palpite do usuário.
 // ------------------------------------------------------------
 
+let secreto = Math.floor(Math.random() * 10) + 1;
+let palpite = 0;
 
+while (palpite !== secreto) {
+    palpite = parseInt(prompt("Adivinhe o número de 1 a 10:"));
+
+    if (palpite < secreto) {
+        console.log("O número secreto é maior!");
+    } else if (palpite > secreto) {
+        console.log("O número secreto é menor!");
+    }
+}
+
+console.log("Parabéns! Acertou!");
 
 
 // ============================================================
