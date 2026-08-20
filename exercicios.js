@@ -86,7 +86,13 @@ if (media >= 7) {
 // Se for >= 18, mostre "Maior de idade".
 // Se não, mostre "Menor de idade".
 // ------------------------------------------------------------
+let idade = 20;
 
+if (idade >= 18) {
+    console.log("Maior de idade");
+} else {
+    console.log("Menor de idade");
+}
 
 
 
@@ -99,7 +105,17 @@ if (media >= 7) {
 //   25 até 29.9    = "Sobrepeso"
 //   30 ou mais     = "Obesidade"
 // ------------------------------------------------------------
+let imc = peso / (altura * altura);
 
+if (imc < 18.5) {
+    console.log("Abaixo do peso");
+} else if (imc >= 18.5 && imc <= 24.9) {
+    console.log("Peso normal");
+} else if (imc >= 25 && imc <= 29.9) {
+    console.log("Sobrepeso");
+} else {
+    console.log("Obesidade");
+}
 
 
 
