@@ -202,7 +202,10 @@ for (let i = 1; i <= 10; i++) {
 // Mostre cada número no console.
 // No final, mostre "Feliz Ano Novo!" (ou qualquer mensagem).
 // ------------------------------------------------------------
-
+for (let i = 10; i >= 0; i--) {
+    console.log(i);
+}
+console.log("Feliz Ano Novo!");
 
 
 
