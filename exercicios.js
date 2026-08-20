@@ -318,7 +318,21 @@ console.log(inverter("javascript"));
 // e verifique cada letra com um for.
 // ------------------------------------------------------------
 
+function contarVogais(palavra) {
+    let palavraMinusc = palavra.toLowerCase();
+    let contador = 0;
+    let vogais = "aeiou";
 
+    for (let i = 0; i < palavraMinusc.length; i++) {
+        if (vogais.includes(palavraMinusc[i])) {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+
+console.log(contarVogais("javascript"));
 
 
 // ============================================================
