@@ -216,7 +216,14 @@ console.log("Feliz Ano Novo!");
 // Exemplo: se N = 5, resultado = 1+2+3+4+5 = 15
 // ------------------------------------------------------------
 
+let N = 5;
+let soma = 0;
 
+for (let i = 1; i <= N; i++) {
+    soma += i;
+}
+
+console.log(soma);
 
 
 // EXERCÍCIO 12 - Adivinhe o número
