@@ -53,7 +53,6 @@ console.log("impar")
 }
 
 
-
 // EXERCÍCIO 4 - Média de notas
 // Crie 3 variáveis com notas (de 0 a 10).
 // Calcule a média e mostre no console.
@@ -61,6 +60,19 @@ console.log("impar")
 // Se não, mostre "Reprovado".
 // ------------------------------------------------------------
 
+let nota1 = 8.5;
+let nota2 = 6.0;
+let nota3 = 7.5;
+
+let media = (nota1 + nota2 + nota3) / 3;
+
+console.log(media);
+
+if (media >= 7) {
+    console.log("Aprovado");
+} else {
+    console.log("Reprovado");
+}
 
 
 
