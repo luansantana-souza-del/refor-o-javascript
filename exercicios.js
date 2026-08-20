@@ -128,7 +128,25 @@ if (imc < 18.5) {
 // Compare as jogadas e mostre quem ganhou.
 // ------------------------------------------------------------
 
+let jogadaUsuario = "pedra";
 
+let opcoes = ["pedra", "papel", "tesoura"];
+let jogadaComputador = opcoes[Math.floor(Math.random() * 3)];
+
+console.log("Usuário: " + jogadaUsuario);
+console.log("Computador: " + jogadaComputador);
+
+if (jogadaUsuario === jogadaComputador) {
+    console.log("Empate");
+} else if (
+    (jogadaUsuario === "pedra" && jogadaComputador === "tesoura") ||
+    (jogadaUsuario === "papel" && jogadaComputador === "pedra") ||
+    (jogadaUsuario === "tesoura" && jogadaComputador === "papel")
+) {
+    console.log("Você ganhou!");
+} else {
+    console.log("O computador ganhou!");
+}
 
 
 // EXERCÍCIO 8 - Sistema de notas
