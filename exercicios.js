@@ -426,7 +426,27 @@ console.log(pares);
 // Dica: document.body.style.backgroundColor = 'red'
 // ------------------------------------------------------------
 
+const botaoVermelho = document.createElement('button');
+botaoVermelho.innerText = 'Vermelho';
+botaoVermelho.onclick = function() {
+    document.body.style.backgroundColor = 'red';
+};
 
+const botaoAzul = document.createElement('button');
+botaoAzul.innerText = 'Azul';
+botaoAzul.onclick = function() {
+    document.body.style.backgroundColor = 'blue';
+};
+
+const botaoVerde = document.createElement('button');
+botaoVerde.innerText = 'Verde';
+botaoVerde.onclick = function() {
+    document.body.style.backgroundColor = 'green';
+};
+
+document.body.appendChild(botaoVermelho);
+document.body.appendChild(botaoAzul);
+document.body.appendChild(botaoVerde);
 
 
 // EXERCÍCIO 22 - Contador
