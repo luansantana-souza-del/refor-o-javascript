@@ -670,7 +670,82 @@ mostrarPergunta();
 // Math.random() para escolher caracteres aleatórios.
 // ------------------------------------------------------------
 
+const labelTamanho = document.createElement('label');
+labelTamanho.textContent = "Tamanho da senha: ";
+const inputTamanho = document.createElement('input');
+inputTamanho.type = 'number';
+inputTamanho.value = 12;
+inputTamanho.min = 4;
 
+const labelMaiusculas = document.createElement('label');
+const checkMaiusculas = document.createElement('input');
+checkMaiusculas.type = 'checkbox';
+checkMaiusculas.checked = true;
+labelMaiusculas.appendChild(checkMaiusculas);
+labelMaiusculas.appendChild(document.createTextNode(" Incluir Maiúsculas"));
+
+const labelNumeros = document.createElement('label');
+const checkNumeros = document.createElement('input');
+checkNumeros.type = 'checkbox';
+checkNumeros.checked = true;
+labelNumeros.appendChild(checkNumeros);
+labelNumeros.appendChild(document.createTextNode(" Incluir Números"));
+
+const labelSimbolos = document.createElement('label');
+const checkSimbolos = document.createElement('input');
+checkSimbolos.type = 'checkbox';
+checkSimbolos.checked = true;
+labelSimbolos.appendChild(checkSimbolos);
+labelSimbolos.appendChild(document.createTextNode(" Incluir Símbolos"));
+
+const botaoGerar = document.createElement('button');
+botaoGerar.textContent = "Gerar Senha";
+
+const resultadoSenha = document.createElement('h3');
+resultadoSenha.textContent = "Sua senha aparecerá aqui";
+
+const quebra = () => document.createElement('br');
+
+document.body.appendChild(labelTamanho);
+document.body.appendChild(inputTamanho);
+document.body.appendChild(quebra());
+document.body.appendChild(labelMaiusculas);
+document.body.appendChild(quebra());
+document.body.appendChild(labelNumeros);
+document.body.appendChild(quebra());
+document.body.appendChild(labelSimbolos);
+document.body.appendChild(quebra());
+document.body.appendChild(botaoGerar);
+document.body.appendChild(resultadoSenha);
+
+botaoGerar.onclick = function() {
+    let minusculas = "abcdefghijklmnopqrstuvwxyz";
+    let maiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let numeros = "0123456789";
+    let simbolos = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+
+    let caracteresDisponiveis = minusculas;
+
+    if (checkMaiusculas.checked) {
+        caracteresDisponiveis += maiusculas;
+    }
+    if (checkNumeros.checked) {
+        caracteresDisponiveis += numeros;
+    }
+    if (checkSimbolos.checked) {
+        caracteresDisponiveis += simbolos;
+    }
+
+    let tamanho = parseInt(inputTamanho.value);
+    let senhaGerada = "";
+
+    for (let i = 0; i < tamanho; i++) {
+        let indiceAleatorio = Math.floor(Math.random() * caracteresDisponiveis.length);
+        senhaGerada += caracteresDisponiveis[indiceAleatorio];
+    }
+
+    resultadoSenha.textContent = senhaGerada;
+};
 
 
 // EXERCÍCIO 28 - Galeria de imagens
