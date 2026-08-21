@@ -755,4 +755,49 @@ botaoGerar.onclick = function() {
 // Dica: mude o atributo src da <img> com JavaScript.
 // ------------------------------------------------------------
 
+const imagens = [
+    "https://picsum.photos",
+    "https://picsum.photos",
+    "https://picsum.photos",
+    "https://picsum.photos"
+];
 
+let indiceAtual1 = 0;
+
+const imgGrande = document.createElement('img');
+imgGrande.style.width = '600px';
+imgGrande.style.height = '400px';
+imgGrande.style.display = 'block';
+imgGrande.style.marginBottom = '10px';
+
+const botaoAnterior = document.createElement('button');
+botaoAnterior.textContent = 'Anterior';
+
+const botaoProximo = document.createElement('button');
+botaoProximo.textContent = 'Próximo';
+
+function atualizarImagem() {
+    imgGrande.src = imagens[indiceAtual];
+}
+
+botaoAnterior.onclick = function() {
+    indiceAtual--;
+    if (indiceAtual < 0) {
+        indiceAtual = imagens.length - 1;
+    }
+    atualizarImagem();
+};
+
+botaoProximo.onclick = function() {
+    indiceAtual++;
+    if (indiceAtual >= imagens.length) {
+        indiceAtual = 0;
+    }
+    atualizarImagem();
+};
+
+document.body.appendChild(imgGrande);
+document.body.appendChild(botaoAnterior);
+document.body.appendChild(botaoProximo);
+
+atualizarImagem();
