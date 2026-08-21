@@ -347,7 +347,19 @@ console.log(contarVogais("javascript"));
 // Remova o último item com pop() e mostre a lista novamente.
 // ------------------------------------------------------------
 
+let listaCompras = [];
 
+listaCompras.push("Arroz");
+listaCompras.push("Feijão");
+listaCompras.push("Macarrão");
+listaCompras.push("Leite");
+listaCompras.push("Café");
+
+console.log(listaCompras);
+
+listaCompras.pop();
+
+console.log(listaCompras);
 
 
 // EXERCÍCIO 18 - Maior e menor
