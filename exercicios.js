@@ -402,7 +402,13 @@ console.log(nomes);
 // Dica: use .filter(function(numero) { return numero % 2 === 0 })
 // ------------------------------------------------------------
 
+let numeros3 = 1;
 
+let pares = numeros.filter(function(numero) {
+    return numero % 2 === 0;
+});
+
+console.log(pares);
 
 
 // ============================================================
