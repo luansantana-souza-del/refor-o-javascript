@@ -590,7 +590,75 @@ document.body.appendChild(botaoResetar);
 //   { pergunta: "...", opcoes: ["a", "b", "c"], correta: 1 }
 // ------------------------------------------------------------
 
+const perguntas = [
+    {
+        pergunta: "Qual é a capital da França?",
+        opcoes: ["Londres", "Paris", "Berlim", "Madrid"],
+        correta: 1
+    },
+    {
+        pergunta: "Quanto é 5 + 7?",
+        opcoes: ["10", "11", "12", "13"],
+        correta: 2
+    },
+    {
+        pergunta: "Qual linguagem roda no navegador?",
+        opcoes: ["Java", "Python", "C++", "JavaScript"],
+        correta: 3
+    },
+    {
+        pergunta: "Qual é o maior planeta do sistema solar?",
+        opcoes: ["Terra", "Marte", "Júpiter", "Saturno"],
+        correta: 2
+    },
+    {
+        pergunta: "Em que ano o homem pisou na Lua?",
+        opcoes: ["1965", "1969", "1972", "1975"],
+        correta: 1
+    }
+];
 
+let indiceAtual = 0;
+let pontuacao = 0;
+
+const containerQuiz = document.createElement('div');
+const tituloPergunta = document.createElement('h2');
+const containerOpcoes = document.createElement('div');
+
+containerQuiz.appendChild(tituloPergunta);
+containerQuiz.appendChild(containerOpcoes);
+document.body.appendChild(containerQuiz);
+
+function mostrarPergunta() {
+    containerOpcoes.innerHTML = '';
+
+    if (indiceAtual < perguntas.length) {
+        let q = perguntas[indiceAtual];
+        tituloPergunta.textContent = q.pergunta;
+
+        q.opcoes.forEach(function(opcao, indice) {
+            const botaoOpcao = document.createElement('button');
+            botaoOpcao.textContent = opcao;
+            botaoOpcao.style.display = 'block';
+            botaoOpcao.style.margin = '5px 0';
+            
+            botaoOpcao.onclick = function() {
+                if (indice === q.correta) {
+                    pontuacao++;
+                }
+                indiceAtual++;
+                mostrarPergunta();
+            };
+            
+            containerOpcoes.appendChild(botaoOpcao);
+        });
+    } else {
+        tituloPergunta.textContent = "Quiz Concluído!";
+        containerOpcoes.textContent = "Você acertou " + pontuacao + " de " + perguntas.length + ".";
+    }
+}
+
+mostrarPergunta();
 
 
 // EXERCÍCIO 27 - Gerador de senha
