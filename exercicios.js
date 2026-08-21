@@ -457,7 +457,30 @@ document.body.appendChild(botaoVerde);
 // e atualize o textContent do <h1> a cada clique.
 // ------------------------------------------------------------
 
+const contadorHtml = document.createElement('h1');
+contadorHtml.textContent = '0';
 
+const botaoMenos = document.createElement('button');
+botaoMenos.textContent = '-';
+
+const botaoMais = document.createElement('button');
+botaoMais.textContent = '+';
+
+let valorContador = 0;
+
+botaoMais.onclick = function() {
+    valorContador++;
+    contadorHtml.textContent = valorContador;
+};
+
+botaoMenos.onclick = function() {
+    valorContador--;
+    contadorHtml.textContent = valorContador;
+};
+
+document.body.appendChild(contadorHtml);
+document.body.appendChild(botaoMenos);
+document.body.appendChild(botaoMais);
 
 
 // EXERCÍCIO 23 - Mostrar e esconder
