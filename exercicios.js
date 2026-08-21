@@ -500,7 +500,7 @@ botaoMenos.textContent = '-';
 const botaoMais = document.createElement('button');
 botaoMais.textContent = '+';
 
-let valorContador = 0;
+let valorContador3 = 0;
 
 botaoMais.onclick = function() {
     valorContador++;
@@ -528,7 +528,58 @@ document.body.appendChild(botaoMais);
 // Dica: use setInterval() para contar e clearInterval() para pausar.
 // ------------------------------------------------------------
 
+const cronometroHtml = document.createElement('h1');
+cronometroHtml.textContent = '00:00';
 
+const botaoIniciar = document.createElement('button');
+botaoIniciar.textContent = 'Iniciar';
+
+const botaoPausar = document.createElement('button');
+botaoPausar.textContent = 'Pausar';
+
+const botaoResetar = document.createElement('button');
+botaoResetar.textContent = 'Resetar';
+
+let segundos = 0;
+let minutos = 0;
+let intervalo = null;
+
+function atualizarDisplay() {
+    let s = segundos < 10 ? '0' + segundos : segundos;
+    let m = minutos < 10 ? '0' + minutos : minutos;
+    cronometroHtml.textContent = m + ':' + s;
+}
+
+botaoIniciar.onclick = function() {
+    if (intervalo === null) {
+        intervalo = setInterval(function() {
+            segundos++;
+            if (segundos === 60) {
+                segundos = 0;
+                minutos++;
+            }
+            atualizarDisplay();
+        }, 1000);
+    }
+};
+
+botaoPausar.onclick = function() {
+    clearInterval(intervalo);
+    intervalo = null;
+};
+
+botaoResetar.onclick = function() {
+    clearInterval(intervalo);
+    intervalo = null;
+    segundos = 0;
+    minutos = 0;
+    atualizarDisplay();
+};
+
+document.body.appendChild(cronometroHtml);
+document.body.appendChild(botaoIniciar);
+document.body.appendChild(botaoPausar);
+document.body.appendChild(botaoResetar);
 
 
 // EXERCÍCIO 26 - Quiz de perguntas
