@@ -370,7 +370,13 @@ console.log(listaCompras);
 // Ou tente fazer com um for (mais desafiador!).
 // ------------------------------------------------------------
 
+let numeros12 = 7;
 
+let maior = Math.max(...numeros);
+let menor = Math.min(...numeros);
+
+console.log("Maior:", maior);
+console.log("Menor:", menor);
 
 
 // EXERCÍCIO 19 - Ordenar nomes
@@ -380,7 +386,13 @@ console.log(listaCompras);
 // Dica: use .sort() e .reverse()
 // ------------------------------------------------------------
 
+let nomes = ["Mariana", "Carlos", "Ana", "Pedro", "Julia", "Bruno"];
 
+nomes.sort();
+console.log(nomes);
+
+nomes.reverse();
+console.log(nomes);
 
 
 // EXERCÍCIO 20 - Filtrar pares
